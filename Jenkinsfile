@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
         image 'node:alpine'
-        args '-w app -v /work/projects/jenkins/nodejs/dist:/app/out'
+        args '-w /app -v /work/projects/jenkins/nodejs/dist:/app/out'
     }
   }
   stages {
