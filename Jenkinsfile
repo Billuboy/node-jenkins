@@ -6,6 +6,13 @@ pipeline {
     }
   }
   stages {
+    stage('Something') {
+      steps {
+        sh 'whoami'
+      }
+    }
+  }
+  stages {
     stage('Build') {
       steps {
         sh 'npm install'
