@@ -11,7 +11,7 @@ pipeline {
         sh 'whoami'
       }
     }
-    stage('Something') {
+    stage('Location') {
       steps {
         sh '''
           ls
