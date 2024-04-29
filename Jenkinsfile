@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-        image 'node:lts-alpine'
+        image 'node:alpine'
         args '-v $PWD/dist:/root/out'
     }
   }
