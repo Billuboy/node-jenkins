@@ -11,6 +11,14 @@ pipeline {
         sh 'whoami'
       }
     }
+    stage('Something') {
+      steps {
+        sh '''
+          ls
+          pwd
+        '''
+      }
+    }
     stage('Build') {
       steps {
         sh 'npm install'
