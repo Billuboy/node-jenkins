@@ -1,8 +1,7 @@
 pipeline {
   agent {
     docker {
-        image 'node:alpine'
-        args '-w /app -v $PWD/dist:/app/out'
+      image 'node:alpine'
     }
   }
   stages {
@@ -11,22 +10,14 @@ pipeline {
         sh 'npm install'
       }
     }
-    stage('Something') {
-      steps {
-        sh 'whoami'
-      }
-    }
     stage('Build') {
       steps {
         sh 'npm run build'
       }
     }
-    stage('Location') {
+    stage('Archiving') {
       steps {
-        sh '''
-          ls
-          pwd
-        '''
+        zip zipFile: 'build.zip', archive: false, dir: 'out'
       }
     }
   }
