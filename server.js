@@ -8,6 +8,8 @@ const ENV = process.env.APIS_ENV ?? 'development';
 
 app.use(cors());
 
+
+
 app.get('/', (_req, res)=> res.json({message: `${ENV} server is running.`}))
 
 app.listen(PORT, ()=>{
